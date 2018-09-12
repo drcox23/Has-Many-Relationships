@@ -1,0 +1,13 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:10.5-alpine
+    env_file: .env
+    volumes:
+      - pg-data-volume:/var/lib/postgresql/data
+    ports:
+      - '5432:5432' #port 5432 is a postgres port. this is to map 
+      #opening up a port on our host to get access to the container
+
+volumes: 
+  pg-data-volume:
